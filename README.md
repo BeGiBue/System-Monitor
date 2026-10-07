@@ -8,6 +8,7 @@ Kompakte Custom-Card zur Überwachung des Hosts, auf dem Home Assistant läuft �
 
 - Theme-sensitive Darstellung: alle Farben kommen aus dem aktiven Home-Assistant-Theme (Light Mode, Dark Mode und benutzerdefinierte Themes)
 - Editierbarer Titel und Untertitel sowie frei wählbares Symbol, Standard `mdi:raspberry-pi`
+- Platinen-Illustration des Raspberry Pi 5 oben rechts, direkt in der JavaScript-Datei eingebettet; optional eigene Bild-URL oder ausblendbar
 - Drei Kacheln: CPU-Auslastung, CPU-Temperatur und Netzteil-/Spannungsstatus
 - Arbeitsspeicher und Speicher als Fortschrittsbalken mit Prozentwert sowie Belegt und Frei
 - Warnfarben nach Schwellwerten: grün, orange und rot
@@ -94,6 +95,7 @@ type: custom:system-monitor
 title: System Monitor
 subtitle: Raspberry Pi 5
 icon: mdi:raspberry-pi
+show_image: true
 ```
 
 Vollständiges Beispiel mit den Standard-Entitäten:
@@ -103,6 +105,8 @@ type: custom:system-monitor
 title: System Monitor
 subtitle: Raspberry Pi 5
 icon: mdi:raspberry-pi
+show_image: true
+image_url: ''
 cpu_entity: sensor.system_monitor_processor_use
 temperature_entity: sensor.system_monitor_processor_temperature
 power_entity: binary_sensor.rpi_power_status
@@ -117,9 +121,21 @@ disk_free_entity: sensor.system_monitor_disk_free
 last_start_entity: sensor.system_monitor_last_boot
 ```
 
+## Bild
+
+Oben rechts zeigt die Card eine Illustration des Raspberry Pi 5. Sie ist eine eigene, vereinfachte Zeichnung ohne Logo und direkt in der JavaScript-Komponente eingebettet; es wird kein separates Bild geladen.
+
+Für ein eigenes Bild, zum Beispiel ein freigestelltes Foto, kann im grafischen Editor eine Bild-URL eingetragen werden:
+
+```yaml
+image_url: /local/images/pi5.png
+```
+
+Mit `show_image: false` wird das Bild vollständig ausgeblendet. Bei sehr schmalen Karten (unter 320 px) liegt das Bild abgedunkelt hinter dem Titel, damit der Text lesbar bleibt.
+
 ## Grafischer Editor
 
-Die Card verwendet den eingebauten Formular-Editor von Home Assistant (`getConfigForm()`). Titel und Untertitel sind native Textfelder, das Symbol ein Icon-Picker und alle Entitäten native Entity-Picker.
+Die Card verwendet den eingebauten Formular-Editor von Home Assistant (`getConfigForm()`). Titel, Untertitel und Bild-URL sind native Textfelder, das Symbol ein Icon-Picker, die Bildanzeige ein Schalter und alle Entitäten native Entity-Picker.
 
 Die Gruppen **Allgemein**, **System**, **Arbeitsspeicher**, **Speicher** und **Start** können im Editor aufgeklappt werden.
 

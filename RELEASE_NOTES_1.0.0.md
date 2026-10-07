@@ -5,6 +5,7 @@ Erste öffentliche Version der kompakten System Monitor Card für Home Assistant
 ## Highlights
 
 - Kompakte, theme-sensitive Oberfläche im Stil der NAS Card
+- Raspberry-Pi-5-Illustration oben rechts, direkt in der JavaScript-Datei eingebettet; optional eigene Bild-URL oder ausblendbar
 - CPU-Auslastung, CPU-Temperatur und Netzteil-/Spannungsstatus als Kacheln
 - Arbeitsspeicher und Speicher als Balken mit Prozentwert sowie Belegt/Frei
 - „Letzter Start“ im Home-Assistant-Zeit-/Datumsformat

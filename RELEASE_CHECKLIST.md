@@ -21,6 +21,7 @@
 - [ ] Visuellen Editor prüfen: Titel, Untertitel, Symbol und alle Entity-Picker.
 - [ ] Standard-Entity-IDs gegen die echte Installation prüfen (`sensor.system_monitor_*`, `binary_sensor.rpi_power_status`).
 - [ ] Netzteil-Kachel prüfen (OK und, falls möglich, Unterspannung).
+- [ ] Bild oben rechts prüfen: Standard-Illustration, `show_image: false` und eigene `image_url`.
 - [ ] Breitenänderung im Sections-Dashboard prüfen; Höhe darf nicht manuell skalierbar sein.
 - [ ] Mobile Ansicht prüfen.
 - [ ] „Letzter Start“ mit Home-Assistant-Zeitformat prüfen.
