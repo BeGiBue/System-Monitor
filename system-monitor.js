@@ -239,7 +239,7 @@ main{padding:10px;display:grid;gap:7px}
 
 .head{position:relative;display:flex;align-items:center;gap:10px;padding:2px 2px 0;min-height:64px}
 .head>div{min-width:0;max-width:62%}
-.board{position:absolute;right:0;top:0;height:64px;width:auto;max-width:42%;object-fit:contain;filter:drop-shadow(0 4px 6px rgba(0,0,0,.35));pointer-events:none}
+.board{position:absolute;right:0;top:0;height:64px;width:auto;max-width:42%;object-fit:contain;opacity:.65;filter:drop-shadow(0 4px 6px rgba(0,0,0,.35));pointer-events:none}
 .ticon{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:color-mix(in srgb,var(--pri) 16%,transparent);color:var(--pri)}
 .ticon ha-icon{--mdc-icon-size:22px}
 h1{margin:0;font-size:18px;line-height:1.1}
