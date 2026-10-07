@@ -22,6 +22,8 @@ Erste öffentliche Version der kompakten System Monitor Card für Home Assistant
 
 Das Repository ist für die Installation als HACS-Dashboard-Plugin vorbereitet. `hacs.json` verweist auf `system-monitor.js`.
 
+Mit einem Klick in HACS hinzufügen: <https://my.home-assistant.io/redirect/hacs_repository/?owner=BeGiBue&repository=System-Monitor&category=plugin>
+
 ## Lizenz
 
 GNU Affero General Public License v3.0 only (AGPL-3.0-only)

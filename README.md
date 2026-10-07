@@ -57,7 +57,13 @@ Die Entity-IDs können je nach Home-Assistant-Version und Systemname abweichen. 
 
 ### Automatisch
 
+Mit einem Klick das Repository in HACS öffnen und die System Monitor Card installieren:
+
 [![Open your Home Assistant instance and open this repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=BeGiBue&repository=System-Monitor&category=plugin)
+
+Link zum Hinzufügen in HACS: <https://my.home-assistant.io/redirect/hacs_repository/?owner=BeGiBue&repository=System-Monitor&category=plugin>
+
+Der Link nutzt „My Home Assistant“ und öffnet das Repository in deiner eigenen Home-Assistant-Instanz. Beim ersten Mal muss dort einmalig die Adresse deiner Instanz hinterlegt werden.
 
 ### Manuell
 
