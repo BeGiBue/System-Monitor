@@ -1,17 +1,26 @@
-# System Monitor Card 1.0.0
+# System Monitor Card 1.0.1
 
-Erste öffentliche Version der kompakten System Monitor Card für Home Assistant – vorkonfiguriert für den Raspberry Pi, auf dem Home Assistant läuft.
+Erste veröffentlichte Version der kompakten System Monitor Card für Home Assistant – vorkonfiguriert für den Raspberry Pi, auf dem Home Assistant läuft.
 
 ## Highlights
 
 - Kompakte, theme-sensitive Oberfläche im Stil der NAS Card
+- Raspberry-Pi-5-Illustration oben rechts, direkt in der JavaScript-Datei eingebettet; ausblendbar oder durch eine eigene Bild-URL ersetzbar
 - CPU-Auslastung, CPU-Temperatur und Netzteil-/Spannungsstatus als Kacheln
 - Arbeitsspeicher und Speicher als Balken mit Prozentwert sowie Belegt/Frei
 - „Letzter Start“ im Home-Assistant-Zeit-/Datumsformat
 - Warnfarben (grün/orange/rot) nach Schwellwerten, Farben komplett aus dem aktiven Theme
-- Native Entity-Picker, Textfelder und Icon-Picker im visuellen Editor
+- Native Entity-Picker, Textfelder, Schalter und Icon-Picker im visuellen Editor
 - Breite im Sections-Dashboard frei einstellbar (3–12 Spalten); Höhe automatisch
 - Tippen auf einen Wert öffnet die Detailansicht der Entität
+
+## Änderungen gegenüber 1.0.0
+
+Die Version 1.0.0 wurde nicht veröffentlicht; 1.0.1 enthält deren Inhalt und zusätzlich:
+
+- Raspberry-Pi-5-Illustration mit Deckkraft 65 % und den Optionen `show_image` und `image_url`
+- Schmale Layouts richten sich nach der Kartenbreite statt nach dem Browserfenster
+- Link zum Hinzufügen in HACS im README
 
 ## Voraussetzungen
 

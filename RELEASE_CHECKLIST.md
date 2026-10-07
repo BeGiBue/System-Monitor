@@ -1,11 +1,11 @@
-# Release Checklist — v1.0.0
+# Release Checklist — v1.0.1
 
 ## Repository vorbereitet
 
-- [x] `VERSION` steht auf `1.0.0`.
-- [x] Öffentliche Versionskennung in `system-monitor.js` steht auf `1.0.0`.
-- [x] `CHANGELOG.md` für `1.0.0` angelegt.
-- [x] `RELEASE_NOTES_1.0.0.md` vorbereitet.
+- [x] `VERSION` steht auf `1.0.1`.
+- [x] Öffentliche Versionskennung in `system-monitor.js` steht auf `1.0.1`.
+- [x] `CHANGELOG.md` für `1.0.1` angelegt.
+- [x] `RELEASE_NOTES_1.0.1.md` vorbereitet.
 - [x] `hacs.json` verweist auf `system-monitor.js`.
 - [x] HACS-Validierung ist für `main`, Pull Requests und manuelle Ausführung vorbereitet.
 - [x] README beschreibt Installation, Konfiguration und Layout.
@@ -29,6 +29,6 @@
 
 ## Veröffentlichung
 
-- [ ] Nach dem erfolgreichen finalen HACS-Lauf Tag `v1.0.0` auf dem finalen `main`-Commit erstellen.
-- [ ] Danach GitHub Release `v1.0.0` mit dem Inhalt aus `RELEASE_NOTES_1.0.0.md` veröffentlichen.
+- [ ] Nach dem erfolgreichen finalen HACS-Lauf Tag `v1.0.1` auf dem finalen `main`-Commit erstellen.
+- [ ] Danach GitHub Release `v1.0.1` mit dem Inhalt aus `RELEASE_NOTES_1.0.1.md` veröffentlichen.
 - [ ] Erst danach ggf. den PR für `hacs/default` erstellen.

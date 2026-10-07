@@ -2,7 +2,7 @@
 
 Kompakte Custom-Card zur Überwachung des Hosts, auf dem Home Assistant läuft – vorkonfiguriert für einen **Raspberry Pi 5** mit der Integration **System Monitor**.
 
-**Version 1.0.0**
+**Version 1.0.1**
 
 ## Funktionen
 
