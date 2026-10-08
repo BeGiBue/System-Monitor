@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.3 - 2026-10-08
+
+### Behoben
+
+- Die Card wurde im Sections-Dashboard unten abgeschnitten. Die feste Höhe beträgt jetzt 6 Zeilen (376 px) statt 5 Zeilen (312 px), damit der Inhalt auch mit den Schriften von Home Assistant vollständig hineinpasst.
+- Masonry-Dashboards: `getCardSize()` meldet 8 statt 6.
+
 ## 1.0.2 - 2026-10-08
 
 ### Geändert
