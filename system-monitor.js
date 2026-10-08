@@ -1,7 +1,7 @@
 /*
  * System Monitor Card — kompakte Home Assistant Custom Card zur Überwachung
  * eines Hosts (vorkonfiguriert für Raspberry Pi 5 mit der Integration "System Monitor").
- * Version 1.0.1 — AGPL-3.0-only — BeGiBue
+ * Version 1.0.2 — AGPL-3.0-only — BeGiBue
  * https://github.com/BeGiBue/System-Monitor
  *
  * Installation: siehe README.md (HACS) oder manuell:
@@ -11,7 +11,7 @@
  *   3. Karte hinzufügen:  type: custom:system-monitor
  */
 
-const SYSTEM_MONITOR_CARD_VERSION = "1.0.1";
+const SYSTEM_MONITOR_CARD_VERSION = "1.0.2";
 
 // Eingebettete Platinen-Illustration (eigene Zeichnung, ohne Logo); optional per image_url ersetzbar
 const BOARD_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 118"><defs><linearGradient id="pcb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f9a52"/><stop offset="1" stop-color="#1b6d38"/></linearGradient><linearGradient id="met" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1f3f6"/><stop offset="1" stop-color="#aeb4be"/></linearGradient><linearGradient id="soc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9dde3"/><stop offset="1" stop-color="#8f96a2"/></linearGradient><linearGradient id="usb3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#1d4fb8"/></linearGradient><linearGradient id="usb2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4f58"/><stop offset="1" stop-color="#23262c"/></linearGradient></defs><rect x="6" y="6" width="168" height="106" rx="8" fill="url(#pcb)" stroke="#124f28" stroke-width="1.5"/><rect x="9" y="9" width="162" height="100" rx="6" fill="none" stroke="#ffffff" stroke-opacity=".12"/><path d="M24 30H58" stroke="#ffffff" stroke-opacity=".10" stroke-width="1"/><path d="M24 36H58" stroke="#ffffff" stroke-opacity=".10" stroke-width="1"/><path d="M24 42H58" stroke="#ffffff" stroke-opacity=".10" stroke-width="1"/><circle cx="16" cy="16" r="4.6" fill="#d8b24a"/><circle cx="16" cy="16" r="2.6" fill="#0f3d20"/><circle cx="16" cy="102" r="4.6" fill="#d8b24a"/><circle cx="16" cy="102" r="2.6" fill="#0f3d20"/><circle cx="122" cy="16" r="4.6" fill="#d8b24a"/><circle cx="122" cy="16" r="2.6" fill="#0f3d20"/><circle cx="122" cy="102" r="4.6" fill="#d8b24a"/><circle cx="122" cy="102" r="2.6" fill="#0f3d20"/><rect x="30" y="10" width="86" height="11" rx="1.5" fill="#1a1c20"/><rect x="33.0" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="33.0" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="37.2" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="37.2" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="41.4" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="41.4" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="45.6" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="45.6" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="49.8" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="49.8" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="54.0" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="54.0" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="58.2" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="58.2" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="62.4" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="62.4" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="66.6" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="66.6" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="70.8" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="70.8" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="75.0" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="75.0" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="79.2" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="79.2" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="83.4" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="83.4" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="87.6" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="87.6" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="91.8" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="91.8" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="96.0" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="96.0" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="100.2" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="100.2" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="104.4" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="104.4" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="108.6" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="108.6" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="112.8" y="12" width="2.2" height="2.2" fill="#e6c25a"/><rect x="112.8" y="16.4" width="2.2" height="2.2" fill="#e6c25a"/><rect x="60" y="36" width="40" height="40" rx="4" fill="#202328"/><rect x="63" y="39" width="34" height="34" rx="3" fill="url(#soc)" stroke="#6f7580" stroke-width="1"/><rect x="68" y="44" width="24" height="24" rx="2" fill="none" stroke="#ffffff" stroke-opacity=".45"/><rect x="106" y="40" width="22" height="26" rx="2.5" fill="#17191d"/><rect x="109" y="43" width="16" height="3" fill="#ffffff" fill-opacity=".14"/><rect x="28" y="44" width="24" height="18" rx="2" fill="url(#met)" stroke="#8d939d" stroke-width=".8"/><rect x="30" y="70" width="7" height="4" rx=".8" fill="#161719"/><rect x="40" y="70" width="7" height="4" rx=".8" fill="#161719"/><rect x="50" y="70" width="7" height="4" rx=".8" fill="#161719"/><rect x="104" y="74" width="5" height="8" rx=".8" fill="#161719"/><rect x="112" y="74" width="5" height="8" rx=".8" fill="#161719"/><rect x="60" y="84" width="10" height="5" rx=".8" fill="#161719"/><rect x="2" y="48" width="20" height="24" rx="2" fill="#2a2d33"/><rect x="4" y="52" width="14" height="16" rx="1" fill="#14161a"/><rect x="130" y="10" width="16" height="6" rx="1" fill="#f0f0ee"/><rect x="130" y="100" width="16" height="6" rx="1" fill="#f0f0ee"/><rect x="22" y="104" width="15" height="9" rx="2.5" fill="url(#met)" stroke="#8d939d" stroke-width=".8"/><rect x="26" y="107" width="7" height="3" rx="1.5" fill="#1a1c20"/><rect x="46" y="104" width="14" height="9" rx="1.5" fill="url(#met)" stroke="#8d939d" stroke-width=".8"/><rect x="49" y="107" width="8" height="3" fill="#1a1c20"/><rect x="66" y="104" width="14" height="9" rx="1.5" fill="url(#met)" stroke="#8d939d" stroke-width=".8"/><rect x="69" y="107" width="8" height="3" fill="#1a1c20"/><rect x="136" y="20" width="40" height="32" rx="2" fill="url(#met)" stroke="#8d939d" stroke-width="1"/><rect x="150" y="26" width="22" height="20" rx="1.5" fill="#14161a"/><rect x="152" y="28" width="18" height="3" fill="#e6c25a" fill-opacity=".8"/><circle cx="142" cy="26" r="1.6" fill="#7bd88f"/><circle cx="142" cy="32" r="1.6" fill="#f2b84b"/><rect x="136" y="54" width="40" height="26" rx="2" fill="url(#usb3)" stroke="#173f94" stroke-width="1"/><rect x="152" y="58" width="20" height="7" fill="#0c1220"/><rect x="152" y="69" width="20" height="7" fill="#0c1220"/><rect x="136" y="82" width="40" height="26" rx="2" fill="url(#usb2)" stroke="#16181c" stroke-width="1"/><rect x="152" y="86" width="20" height="7" fill="#0c0d10"/><rect x="152" y="97" width="20" height="7" fill="#0c0d10"/></svg>';
@@ -92,14 +92,14 @@ class SystemMonitorCard extends HTMLElement {
     return this._hass;
   }
 
-  // Sections-Dashboard: Breite per Größen-Griff (3–12 Spalten), Höhe ergibt sich automatisch
+  // Sections-Dashboard: Breite per Größen-Griff (3–12 Spalten), Höhe fest auf 5 Zeilen (312 px)
   getGridOptions() {
-    return { columns: 12, min_columns: 3 };
+    return { columns: 12, min_columns: 3, rows: 5, min_rows: 5, max_rows: 5 };
   }
 
   // Masonry-Dashboard: ungefähre Höhe in Zeilen (je ca. 50 px)
   getCardSize() {
-    return 4;
+    return 6;
   }
 
   // ---------- Helfer ----------
@@ -219,7 +219,7 @@ class SystemMonitorCard extends HTMLElement {
 
   static get css() {
     return `
-:host{display:block;width:100%;container-type:inline-size;
+:host{display:block;width:100%;height:100%;container-type:inline-size;
   --bg:var(--ha-card-background,var(--card-background-color,#fff));
   --txt:var(--primary-text-color,#111);
   --mut:var(--secondary-text-color,#777);
@@ -231,10 +231,10 @@ class SystemMonitorCard extends HTMLElement {
   --pan:color-mix(in srgb,var(--bg) 92%,var(--pri) 8%)}
 *{box-sizing:border-box}
 button{font:inherit;color:inherit;cursor:pointer;text-align:left}
-ha-card{overflow:hidden;color:var(--txt);
+ha-card{height:100%;overflow:hidden;color:var(--txt);
   background:radial-gradient(circle at 90% 0,color-mix(in srgb,var(--pri) 14%,transparent),transparent 34%),var(--bg);
   border:1px solid var(--bord);border-radius:var(--ha-card-border-radius,18px)}
-main{padding:10px;display:grid;gap:7px}
+main{height:100%;padding:10px;display:grid;gap:7px;align-content:space-between}
 .tone-success{color:var(--ok)}.tone-warning{color:var(--warn)}.tone-error{color:var(--err)}.tone-neutral{color:var(--pri)}
 
 .head{position:relative;display:flex;align-items:center;gap:10px;padding:2px 2px 0;min-height:64px}

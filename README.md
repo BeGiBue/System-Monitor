@@ -2,7 +2,7 @@
 
 Kompakte Custom-Card zur Überwachung des Hosts, auf dem Home Assistant läuft – vorkonfiguriert für einen **Raspberry Pi 5** mit der Integration **System Monitor**.
 
-**Version 1.0.1**
+**Version 1.0.2**
 
 ## Funktionen
 
@@ -16,7 +16,7 @@ Kompakte Custom-Card zur Überwachung des Hosts, auf dem Home Assistant läuft �
 - Tippen auf Kacheln, Balken sowie Belegt und Frei öffnet die Detailansicht der jeweiligen Entität
 - Alle Entitäten über native Home-Assistant-Entity-Picker auswählbar
 - Breite im Sections-Dashboard frei von 3 bis 12 Spalten einstellbar
-- Höhe wird automatisch durch die Card bestimmt und ist nicht manuell skalierbar
+- Feste Höhe von 5 Zeilen (312 px) im Sections-Dashboard; die Höhe ist nicht manuell skalierbar
 
 ## Warnfarben
 
@@ -141,7 +141,7 @@ Die Gruppen **Allgemein**, **System**, **Arbeitsspeicher**, **Speicher** und **S
 
 ## Layout / Größe
 
-Im Home-Assistant-Sections-Dashboard ist die Breite frei einstellbar (3 bis 12 Spalten). Die Höhe wird bewusst nicht als Grid-Größe vorgegeben; die Card bestimmt sie selbst. In Masonry-Dashboards meldet die Card über `getCardSize()` eine passende Höhe.
+Im Home-Assistant-Sections-Dashboard ist die Breite frei einstellbar (3 bis 12 Spalten). Die Höhe ist fest auf 5 Zeilen (312 px) eingestellt und lässt sich im Layout-Editor nicht ändern; die Card füllt diese Höhe und verteilt den Inhalt gleichmäßig. In Masonry-Dashboards meldet die Card über `getCardSize()` eine passende Höhe.
 
 ## Hinweise zu Marken
 

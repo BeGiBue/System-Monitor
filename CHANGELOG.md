@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.2 - 2026-10-08
+
+### Geändert
+
+- Feste Höhe im Sections-Dashboard: 5 Zeilen (312 px), im Layout-Editor nicht änderbar. Die Card füllt diese Höhe und verteilt den Inhalt gleichmäßig; der Inhalt passt bei Kartenbreiten ab 240 px ohne Überlauf hinein.
+- Masonry-Dashboards: `getCardSize()` meldet 6 statt 4.
+
 ## 1.0.1 - 2026-10-08
 
 ### Hinzugefügt
